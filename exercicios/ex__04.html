@@ -1,0 +1,99 @@
+<!--
+    Apenas com teoria não é possível aprender código, 
+    então, vamos exercitar a utilização do data-attribute em 
+    funções neste desafio. Temos uma lista de cores disponibilizada no
+    código abaixo. Você irá criar um botão que, ao ser clicado, faz aparecer
+    esta lista, e também criará um segundo botão que, ao ser clicado, faz com 
+    que a lista de cores volte a sumir.
+
+    Você pode chegar ao mesmo resultado de diferentes formas. Então, 
+    fique à vontade para compartilhar a sua solução para este desafio no Fórum!
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Manipulando o DOM - Aula 3</title>
+        <style>
+            * {
+                font-size: 2rem;
+            }
+
+            html {
+                font-size: 1vw;
+            }
+
+            [cor="laranja"] {
+                color: orange;
+            }
+
+            [cor="vermelho"] {
+                color: red;
+            }
+
+            [cor="branco"] {
+                color: white;
+            }
+
+            [cor="amarelo"] {
+                color: yellow;
+            }
+
+            [cor="rosa"] {
+                color: pink;
+            }
+
+            [cor="preto"] {
+                color: black;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: initial;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            function mostraTintas(element) {
+                let eleLista = document.querySelector('[data-js="lista"]');
+                let eleBotao = document.querySelector('[data-js="botao"]');
+                if(eleLista.classList[1] === "hide") {
+                    eleLista.classList.add("show");
+                    eleLista.classList.remove("hide");
+                    eleBotao.classList.add("show");
+                    eleBotao.classList.remove("hide");
+                }
+            }
+
+            function escondeTintas(element) {
+                let eleLista = document.querySelector('[data-js="lista"]');
+                let eleBotao = document.querySelector('[data-js="botao"]');
+                eleLista.classList.add("hide");
+                eleLista.classList.remove("show");
+                eleBotao.classList.add("hide");
+                eleBotao.classList.remove("show");
+            }
+        </script>
+
+        <button onclick="mostraTintas(this)">Aluratintas em estoque:</button>
+        <button class="hide" data-js="botao" onclick="escondeTintas(this)">Esconder Lista</button>
+
+        <ul class="lista hide" data-js="lista">
+            <li cor="laranja" tipo="tinta-exterior" class="item">Tinta laranja</li>
+            <li cor="vermelho" tipo="tinta-interior" class="item">Tinta vermelha</li>
+            <li cor="branco" tipo="tinta-interior" class="item">Tinta branca</li>
+            <li cor="amarelo" tipo="tinta-exterior" class="item">Tinta amarela</li>
+            <li cor="rosa" tipo="tinta-exterior" class="item">Tinta rosa</li>
+            <li cor="preto" tipo="tinta-exterior" class="item">Tinta preta</li>
+        </ul>
+
+
+        <a style="background-color: black; padding: 20px; margin: 20px 20px; display: inline-block;" href="https://alura.com.br/" target="_blank"><img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo"></a>
+    </body>
+</html>

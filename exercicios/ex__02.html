@@ -1,0 +1,41 @@
+<!--
+    Chegou a hora de colocar a mão na massa! 
+    No desafio desta aula você irá criar uma função anônima que retorne
+     a frase “Fui clicado”. Esta função será aplicada em conjunto de um evento de clique.
+
+    Você pode utilizar o código base HTML e CSS disponibilizados abaixo, 
+    criar e aplicar o código JavaScript nele, ou também fique à vontade para 
+    criar o layout à sua maneira:
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício número 2</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <h1 class="page-title">
+            Manipulando elementos no DOM</h1>
+
+            <button id="calcular">Enviar notas</button>
+
+            <h1 class="resultado"></h1>
+
+            <h2 class="resultado"></h2>
+
+        </div>
+
+        <a href="https://alura.com.br/" target="_blank"><img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo"></a>
+
+        <script>
+            const botao = document.getElementById("calcular");
+            botao.addEventListener("click", event => {
+                alert("Fui clicado!");
+            });
+        </script>
+    </body>
+</html>
